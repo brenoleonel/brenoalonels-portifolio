@@ -1,26 +1,45 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Suaviza rolagem */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Variáveis de cores padrão (WHITE) */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Tema escuro controlado pela classe .dark (toggle) */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Corpo */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* === Efeito Glow universal (funciona nos dois temas) === */
+@keyframes glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px rgba(0, 255, 85, 0.5)) drop-shadow(0 0 12px rgba(0, 0, 0, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 255, 85, 0.5)) drop-shadow(0 0 22px rgba(0, 0, 0, 0.6));
+  }
+}
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* (Opcional) gradiente alternativo para WHITE quando usar bg-gradient-to-r */
+.light .bg-gradient-to-r {
+  background-image: linear-gradient(to right, #0f1216, #089ad4, #000000);
 }
