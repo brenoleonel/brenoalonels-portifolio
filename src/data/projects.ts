@@ -26,13 +26,4 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/brenoleonel/crm",
     image: "/images/proj2.png",
   },
-  {
-    title: "E-commerce de Estudo",
-    description:
-      "Loja com catálogo, carrinho, promoções, checkout e área administrativa. Foco em boas práticas e performance.",
-    stack: ["Next.js", "NestJS", "Prisma", "Tailwind"],
-    demo: "https://ecommerce-demo.example.com",
-    github: "https://github.com/brenoleonel/ecommerce-study",
-    image: "/images/proj3.png",
-  },
 ];
