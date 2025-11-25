@@ -8,6 +8,6 @@ export const PROFILE = {
     github: "https://github.com/brenoleonel",
     linkedin: "https://www.linkedin.com/in/breno-leonel-869045329/",
     email: "mailto:brenoaleonels@outlook.com",
-    site: "https://seu-dominio.dev",
+    site: "https://brenoalonels-portfolio.vercel.app/",
   },
 };
