@@ -7,6 +7,7 @@ import ProjectModal from "./ProjectModal";
 export default function ProjectCard(project: Project) {
   const { title, description, stack, demo, github, image, isPrivate } = project;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const hasDetails = Boolean(project.longDescription || project.features?.length);
 
   return (
     <>
@@ -56,28 +57,38 @@ export default function ProjectCard(project: Project) {
                 </button>
               </div>
             ) : (
-              <>
-                {demo && (
-                  <a
-                    className="inline-flex items-center gap-1 text-sm underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    href={demo}
-                    target="_blank"
-                    rel="noreferrer"
+              <div className="flex flex-wrap items-center justify-between w-full gap-3">
+                <div className="flex items-center gap-3">
+                  {demo && (
+                    <a
+                      className="inline-flex items-center gap-1 text-sm underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      href={demo}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Demo <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                  {github && (
+                    <a
+                      className="inline-flex items-center gap-1 text-sm underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      href={github}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      GitHub <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+                {hasDetails && (
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline underline-offset-4"
                   >
-                    Demo <ExternalLink className="w-4 h-4" />
-                  </a>
+                    Ver Detalhes <Eye className="w-4 h-4" />
+                  </button>
                 )}
-                {github && (
-                  <a
-                    className="inline-flex items-center gap-1 text-sm underline underline-offset-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    href={github}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GitHub <ExternalLink className="w-4 h-4" />
-                  </a>
-                )}
-              </>
+              </div>
             )}
           </div>
         </div>

@@ -9,3 +9,9 @@ export const TECH = [
   "Insomnia",
   "JWT/Auth",
 ];
+
+export const LEARNING_TECH = [
+  "Python + Flask",
+  "Java (Spring)",
+  "Flutter",
+];

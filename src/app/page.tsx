@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Section from "@/components/Section";
 import Chip from "@/components/Chip";
 import ProjectCard from "@/components/ProjectCard";
-import { TECH } from "@/data/tech";
+import { TECH, LEARNING_TECH } from "@/data/tech";
 import { PROJECTS } from "@/data/projects";
 import { EXPERIENCE } from "@/data/experience";
 import { useTheme } from "@/utils/theme";
@@ -82,6 +82,22 @@ export default function Page() {
         <div className="flex flex-wrap justify-center gap-3">
           {TECH.map((t) => (
             <Chip key={t} label={t} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        id="learning"
+        title="No Radar"
+        titleAlign="center"
+        contentClassName="max-w-4xl mx-auto"
+      >
+        <p className="mb-4 text-center text-sm text-zinc-600 dark:text-zinc-400">
+          Tecnologias que estou explorando e pronto para aplicar quando o time precisar.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {LEARNING_TECH.map((tech) => (
+            <Chip key={tech} label={tech} />
           ))}
         </div>
       </Section>
