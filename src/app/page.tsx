@@ -147,7 +147,7 @@ export default function Page() {
       >
         <div className="grid gap-4 sm:grid-cols-3">
           <a
-            href="mailto:breno@email.com"
+            href="mailto:brenoaleonels@outlook.com"
             className="flex items-center justify-center rounded-2xl border border-zinc-200 p-4 text-sm transition hover:bg-green-200 dark:border-zinc-800 dark:hover:bg-green-600"
           >
             <span className="font-medium">Email</span>
